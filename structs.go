@@ -10,6 +10,13 @@ type Product struct {
 
 }
 
+func (prod *Product) printData(){
+	fmt.Printf("ID: %v\n", prod.id)
+	fmt.Printf("Title: %v\n", prod.title)
+	fmt.Printf("description: %v\n", prod.description)
+	fmt.Printf("price: %.2f\n", prod.price)
+}
+
 func NewProduct(id string, t string, d string, p float64) *Product {
 		return &Product {id, t, d, p }
 
@@ -25,6 +32,7 @@ func main(){
 
 	secondProduct := NewProduct("second product", "pen", "a new pen", 9.99)
 
-	fmt.Println(firstProduct)
-	fmt.Println(*secondProduct)
+	firstProduct.printData()
+
+	secondProduct.printData()
 }
